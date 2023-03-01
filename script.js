@@ -20,7 +20,7 @@ const selectMedia = async function () {
   }
 };
 
-btn.addListener('click', async () => {
+btn.addEventListener('click', async () => {
   btn.disabled = true;
 
   await videElement.requestPictureInPicture();
