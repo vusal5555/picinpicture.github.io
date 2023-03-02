@@ -6,7 +6,7 @@ const btn = document.getElementById('button');
 
 //Prompt use to select media stream, pass to video element, then play
 
-const selectMedia = async function () {
+const getMedia = async function () {
   try {
     const media = await navigator.mediaDevices.getDisplayMedia();
 
@@ -20,12 +20,11 @@ const selectMedia = async function () {
   }
 };
 
+getMedia();
+
 btn.addEventListener('click', async () => {
   btn.disabled = true;
 
   await videElement.requestPictureInPicture();
-
   btn.disabled = false;
 });
-
-selectMedia();
